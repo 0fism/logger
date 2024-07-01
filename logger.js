@@ -41,23 +41,26 @@ var readline = require("readline");
 var fileSystem_1 = require("./fileSystem");
 var loggerClass_1 = require("./loggerClass");
 var readlines = readline.createInterface({ input: process.stdin });
+var regex = /log\.js/;
 function terminalAduit(input) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            (0, child_process_1.exec)(input, function (error, stdout, stderr) {
-                var logger = new loggerClass_1.devLogger();
-                if (error) {
-                    console.error("".concat(stderr));
-                    (0, fileSystem_1.consoleLoggerFile)("".concat(stderr));
-                }
-                else {
-                    console.log(logger.logMessage());
-                }
-                if (stdout.length > 1) {
-                    console.log("stdout: ".concat(stdout));
-                }
-            });
-            return [2 /*return*/];
+            return [2 /*return*/, new Promise(function (resolve) {
+                    (0, child_process_1.exec)(input, function (error, stdout, stderr) {
+                        var logger = new loggerClass_1.devLogger();
+                        if (error) {
+                            console.error("".concat(stderr));
+                            (0, fileSystem_1.consoleLoggerFile)("".concat(stderr));
+                        }
+                        if (regex.test(stdout)) {
+                            console.log(logger.logMessage());
+                        }
+                        resolve();
+                        if (stdout.length > 1) {
+                            console.log("stdout: ".concat(stdout));
+                        }
+                    });
+                })];
         });
     });
 }

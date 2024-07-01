@@ -1,10 +1,8 @@
-Verbose - [DevCommit] - 2024-07-01T00:40:02.427Z - sdsdsds
-------------------------------------------------------
-Error - [Console] - 2024-07-01T00:40:13.603Z - node:internal/modules/cjs/loader:1146
+Error - [Console] - 2024-07-01T01:40:44.786Z - node:internal/modules/cjs/loader:1146
   throw err;
   ^
 
-Error: Cannot find module '/Users/pixarlr/Downloads/Logger/lsdsd.js'
+Error: Cannot find module '/Users/pixarlr/Downloads/Logger/makemistake.js'
     at Module._resolveFilename (node:internal/modules/cjs/loader:1143:15)
     at Module._load (node:internal/modules/cjs/loader:984:27)
     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:142:12)
@@ -15,4 +13,6 @@ Error: Cannot find module '/Users/pixarlr/Downloads/Logger/lsdsd.js'
 
 Node.js v21.5.0
 
+------------------------------------------------------
+Verbose - [DevCommit] - 2024-07-01T01:42:03.877Z - Here is the log message i want to mark.
 ------------------------------------------------------
