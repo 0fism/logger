@@ -72,7 +72,7 @@ function terminalInput() {
                 case 0:
                     if (!true) return [3 /*break*/, 3];
                     return [4 /*yield*/, new Promise(function (resolve) {
-                            readlines.question('', function (input) {
+                            readlines.question("> ", function (input) {
                                 resolve(input);
                             });
                         })];
